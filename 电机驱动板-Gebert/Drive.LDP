@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\desktop\AD硬件大师的私房菜\逐飞驱动板\Drive\Drive.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=drive-roundholes.txt|DrillLayers=gtl,gp1,g1,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=drive-slotholes.txt|DrillLayers=gtl,gp1,g1,gbl

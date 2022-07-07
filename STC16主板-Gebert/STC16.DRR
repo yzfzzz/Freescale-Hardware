@@ -1,0 +1,21 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: STC16.PcbDoc   2022/6/25  17:55:12
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top01 to Bottom04
+ASCII RoundHoles File : STC16-RoundHoles.TXT
+ASCII SlotHoles File : STC16-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.305mm)                                           Round             132       PTH        0.00inch (0.00mm)
+T2      22mil (0.559mm)                                           Round             40        PTH        0.00inch (0.00mm)
+T3      35mil (0.899mm)                                           Round             123       PTH        0.00inch (0.00mm)
+T4      47mil (1.199mm)                                           Round             2         PTH        0.00inch (0.00mm)
+T5      47mil (1.199mm)                                           Slot              3         PTH        0.00inch (0.00mm)
+T6      102mil (2.601mm)                                          Round             2         PTH        0.00inch (0.00mm)
+T7      120mil (3.048mm)                                          Round             4         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              306
+
+Total Processing Time (hh:mm:ss) : 00:00:00

@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Drive.PcbDoc   2022/7/3  21:54:41
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Drive-RoundHoles.TXT
+ASCII SlotHoles File : Drive-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.305mm)                                           Round             135       PTH        0.00inch (0.00mm)
+T2      35mil (0.899mm)                                           Round             6         PTH        0.00inch (0.00mm)
+T3      47mil (1.199mm)                                           Round             6         PTH        0.00inch (0.00mm)
+T4      47mil (1.199mm)                                           Slot              3         PTH        0.00inch (0.00mm)
+T5      118mil (3mm)                                              Slot              4         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              154
+
+Total Processing Time (hh:mm:ss) : 00:00:00

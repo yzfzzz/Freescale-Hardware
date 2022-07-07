@@ -1,0 +1,7 @@
+DRC Rules Export File for PCB: D:\desktop\AD硬件大师的私房菜\逐飞STC16扩展版（仅布线）\STC16扩展板-PRJ\STC16.PcbDoc
+RuleKind=Width|RuleName=BAT|Scope=Board|Minimum=50.00
+RuleKind=Width|RuleName=PWR|Scope=Board|Minimum=25.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=8.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=6.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

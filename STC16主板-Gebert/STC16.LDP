@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\desktop\AD硬件大师的私房菜\逐飞STC16扩展版（仅布线）\STC16扩展板-PRJ\STC16.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=stc16-roundholes.txt|DrillLayers=gtl,gp1,g1,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=stc16-slotholes.txt|DrillLayers=gtl,gp1,g1,gbl
