@@ -1,0 +1,115 @@
+C251 COMPILER V5.60.0,  main                                                               20/07/22  23:20:54  PAGE 1   
+
+
+C251 COMPILER V5.60.0, COMPILATION OF MODULE main
+OBJECT MODULE PLACED IN .\Out_File\main.obj
+COMPILER INVOKED BY: D:\Keil_v5\C251\BIN\C251.EXE ..\USER\src\main.c XSMALL INTR2 WARNINGLEVEL(3) BROWSE INCDIR(..\..\Li
+                    -braries\libraries;..\..\Libraries\seekfree_libraries;..\..\Libraries\seekfree_peripheral;..\CODE;..\USER\inc;..\USER\src
+                    -) DEBUG PRINT(.\Out_File\main.lst) TABS(2) OBJECT(.\Out_File\main.obj) 
+
+stmt  level    source
+
+    1          /********************************************************************************************************
+             -*************
+    2           * COPYRIGHT NOTICE
+    3           * Copyright (c) 2020,逐飞科技
+    4           * All rights reserved.
+    5           * 技术讨论QQ群：一群：179029047(已满)  二群：244861897(已满)  三群：824575535
+    6           *
+    7           * 以下所有内容版权均属逐飞科技所有，未经允许不得用于商业用途，
+    8           * 欢迎各位使用并传播本程序，修改内容时必须保留逐飞科技的版权声明。
+    9           *
+   10           * @file          main
+   11           * @company       成都逐飞科技有限公司
+   12           * @author        逐飞科技(QQ790875685)
+   13           * @version       查看doc内version文件 版本说明
+   14           * @Software    MDK FOR C251 V5.60
+   15           * @Target core   STC16F40K128
+   16           * @Taobao      https://seekfree.taobao.com/
+   17           * @date          2020-12-18
+   18           ********************************************************************************************************
+             -************/
+   19          
+   20          #include "headfile.h"
+   21          
+   22          
+   23          /*
+   24           *关于内核频率的设定，可以查看board.h文件
+   25           *在board_init中,已经将P54引脚设置为复位
+   26           *如果需要使用P54引脚,可以在board.c文件中的board_init()函数中删除SET_P54_RESRT即可
+   27           */
+   28          void main()
+   29          {
+   30   1        int count = 0;
+   31   1        int Distance_test;
+   32   1        uint16 SRF_05_time;
+   33   1        DisableGlobalIRQ(); //关闭总中断  
+   34   1      
+   35   1          //sys_clk可选值:30000000, 27000000. 24000000, 22118400, 20000000, 18432000, 12000000, 11059200, 60000
+             -00, 5529600。
+   36   1          //设置系统频率，此频率需要跟STC-ISP软件中的 <输入用户程序运行的IRC频率>选项的频率一致。
+   37   1          //如果频率设置不对，将会导致串口的数据不正常,PWM的工作不正常等等。
+   38   1          sys_clk = 30000000;     //设置系统频率为30MHz
+   39   1        
+   40   1        board_init(); 
+   41   1        gpio_mode(P3_7,GPI_IMPEDANCE);
+   42   1        P37 = 0;
+   43   1        gpio_mode(P3_3,GPO_PP);
+   44   1        P33=1;
+   45   1        EnableGlobalIRQ();  //开启总中断
+   46   1          while(1)
+   47   1        {
+   48   2                   
+   49   2          P33 = 1;
+   50   2          delay_us(20);
+   51   2          P33 = 0;
+   52   2          while(P37!=1);
+   53   2            TL1 = 0x00;
+   54   2            TH1 = 0x00;
+C251 COMPILER V5.60.0,  main                                                               20/07/22  23:20:54  PAGE 2   
+
+   55   2            TMOD |= 0x40; // 外部计数模式
+   56   2            TR1 = 1; // 启动定时器
+   57   2          count = 0;
+   58   2          while(P37 ==1)
+   59   2          {
+   60   3            count ++;
+   61   3            delay_us(1);
+   62   3            
+   63   3          }TR1 = 0;
+   64   2            
+   65   2            SRF_05_time = (uint16)TH1 << 8;
+   66   2            printf("SRF_05_time_H=%d\r\n",SRF_05_time);
+   67   2            SRF_05_time = ((uint8)TL1) | SRF_05_time;
+   68   2            printf("SRF_05_time=%d\r\n",SRF_05_time);
+   69   2            
+   70   2            Distance_test = (int)(count*0.017);//SRF_05_time*340/200;   
+   71   2            printf("%d,%d\r\n",count,Distance_test);
+   72   2      //    delay_ms(200);
+   73   2      
+   74   2        }
+   75   1      }
+
+
+Module Information          Static   Overlayable
+------------------------------------------------
+  code size            =       189     ------
+  ecode size           =    ------     ------
+  data size            =    ------     ------
+  idata size           =    ------     ------
+  pdata size           =    ------     ------
+  xdata size           =    ------     ------
+  xdata-const size     =    ------     ------
+  edata size           =    ------          2
+  bit size             =    ------     ------
+  ebit size            =    ------     ------
+  bitaddressable size  =    ------     ------
+  ebitaddressable size =    ------     ------
+  far data size        =    ------     ------
+  huge data size       =    ------     ------
+  const size           =    ------     ------
+  hconst size          =        44     ------
+End of Module Information.
+
+
+C251 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
